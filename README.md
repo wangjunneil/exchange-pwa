@@ -1,5 +1,7 @@
 # exchange-pwa
 
+https://www.flaticon.com/packs/countrys-flags
+
 ## Project setup
 ```
 npm install
