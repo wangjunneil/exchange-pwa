@@ -1,22 +1,22 @@
 <template>
-    <md-list class="md-triple-line">
-        <md-list-item v-for="item in rateObjects" v-bind:key="item.symbol">
-          <md-avatar class="md-large">
-            <img :src="item.logo" :alt="item.symbol">
-          </md-avatar>
+  <ion-list>
+    <ion-item-sliding>
+      <ion-item lines="none" v-for="item in rateObjects" v-bind:key="item.symbol">
+        <ion-thumbnail slot="start">
+          <img :src="item.logo">
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ item.symbol }}</h2>
+          <p>{{ item.country }}</p>
+        </ion-label>
+        <ion-input placeholder="" clearOnEdit slot="end" value="0.00" type="number" mode="md" @ionFocus="beginInput" @ionBlur="endInput"></ion-input>
+      </ion-item>
 
-          <div class="md-list-item-text">
-            <span>{{ item.symbol }}</span>
-            <span>{{ item.country }}</span>
-          </div>
-
-          <input type="number"
-            :value="item.rate"
-            placeholder="请输入金额"
-            @focus="beginInput($event)"
-            @blur="endInput($event)"/>
-        </md-list-item>
-      </md-list>
+      <ion-item-options side="end">
+        <ion-item-option>Unread</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </template>
 
 <script>
@@ -51,6 +51,7 @@ export default {
   },
   methods: {
     beginInput(event) {
+      console.log(event);
       if (event.target.value === '0.00') {
         event.target.value = '';
       }
@@ -65,25 +66,12 @@ export default {
 </script>
 
 <style scoped>
-.md-list {
-    /* width: 320px; */
-    max-width: 100%;
-    /* display: inline-block; */
-    vertical-align: top;
-    border: 1px solid rgba(#fff, .12);
+ion-item {
+  padding-top: 10px;
 }
-input {
-  background-color: #424242;
-    text-align: right;
-    font-size: 30px;
-    width: 50%;
-    color: #fff;
 
-    /* -webkit-text-fill-color: #fff; */
-    border: none;
-    outline:none;
-}
-input::-webkit-input-placeholder {
-  color: gray;
+ion-input {
+  text-align: right;
+  font-size: 30px;
 }
 </style>
