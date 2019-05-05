@@ -10,16 +10,12 @@
     </ion-header>
     <ion-content>
       <ion-list>
-        <ion-item lines="none" >
+        <ion-item lines="none" v-for="d in datas" v-bind:key="d.symbol">
           <ion-thumbnail slot="start">
-            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+            <img :src="d.logo">
           </ion-thumbnail>
-          <ion-label>
-            CNY
-          </ion-label>
-          <ion-label slot="end" class="name">
-            人民币
-          </ion-label>
+          <ion-label>{{ d.symbol }}</ion-label>
+          <ion-label slot="end" class="name">{{ d.name }}</ion-label>
         </ion-item>
       </ion-list>
     </ion-content>
@@ -29,6 +25,27 @@
 <script>
 export default {
   name: 'Countrys',
+  data () {
+    return {
+      datas : []
+    }
+  },
+  created() {
+    this.requestData();
+  },
+  methods: {
+    requestData() {
+      async function fetchData() {
+        let data = await fetch('https://raw.githubusercontent.com/wangjunneil/exchange-pwa/master/country.json')
+          .then(res => res.json());
+        return data;
+      }
+
+      fetchData().then(res=> {
+        this.datas = res;
+      })
+    },
+  },
 };
 </script>
 

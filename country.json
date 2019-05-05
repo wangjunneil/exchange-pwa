@@ -1,65 +1,65 @@
 [{
-		"logo": "../assets/country/CNY.png",
+		"logo": "/static/CNY.png",
 		"symbol": "CNY",
 		"name": "人民币"
 	},
 	{
-		"logo": "../assets/country/USD.png",
+		"logo": "/static/USD.png",
 		"symbol": "USD",
 		"name": "美元"
 	},
 	{
-		"logo": "../assets/country/CAD.png",
+		"logo": "/static/CAD.png",
 		"symbol": "CAD",
 		"name": "加拿大元"
 	},
 	{
-		"logo": "../assets/country/CHF.png",
+		"logo": "/static/CHF.png",
 		"symbol": "CHF",
 		"name": "瑞士法郎"
 	},
 	{
-		"logo": "../assets/country/EUR.png",
+		"logo": "/static/EUR.png",
 		"symbol": "EUR",
 		"name": "欧元"
 	},
 	{
-		"logo": "../assets/country/GBP.png",
+		"logo": "/static/GBP.png",
 		"symbol": "GBP",
 		"name": "英镑"
 	},
 	{
-		"logo": "../assets/country/HKD.png",
+		"logo": "/static/HKD.png",
 		"symbol": "HKD",
 		"name": "港币"
 	},
 	{
-		"logo": "../assets/country/JPY.png",
+		"logo": "/static/JPY.png",
 		"symbol": "JPY",
 		"name": "日元"
 	},
 	{
-		"logo": "../assets/country/PHP.png",
+		"logo": "/static/PHP.png",
 		"symbol": "PHP",
 		"name": "菲律宾比索"
 	},
 	{
-		"logo": "../assets/country/RUB.png",
+		"logo": "/static/RUB.png",
 		"symbol": "RUB",
 		"name": "俄罗斯卢布"
 	},
 	{
-		"logo": "../assets/country/TWD.png",
+		"logo": "/static/TWD.png",
 		"symbol": "TWD",
 		"name": "新台币"
 	},
 	{
-		"logo": "../assets/country/VND.png",
+		"logo": "/static/VND.png",
 		"symbol": "VND",
 		"name": "越南盾"
 	},
 	{
-		"logo": "../assets/country/KRW.png",
+		"logo": "/static/KRW.png",
 		"symbol": "KRW",
 		"name": "韩元"
 	}

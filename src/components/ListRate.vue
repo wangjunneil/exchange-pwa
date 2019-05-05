@@ -1,7 +1,7 @@
 <template>
   <ion-list>
-    <ion-item-sliding v-for="item in rateObjects">
-      <ion-item lines="none" min-height="30" v-bind:key="item.symbol">
+    <ion-item-sliding v-for="item in rateObjects" v-bind:key="item.symbol">
+      <ion-item lines="none" min-height="30">
         <ion-thumbnail slot="start">
           <img :src="item.logo">
         </ion-thumbnail>
@@ -29,19 +29,19 @@ export default {
     return {
       rateObjects: [
         {
-          logo: require('../assets/country/CNY.png'),
+          logo: '/static/CNY.png',
           country: '人民币',
           symbol: 'CNY',
           rate: 123.10,
         },
         {
-          logo: require('../assets/country/USD.png'),
+          logo: '/static/USD.png',
           country: '美元',
           symbol: 'USD',
           rate: 789.00,
         },
         {
-          logo: require('../assets/country/JPY.png'),
+          logo: '/static/JPY.png',
           country: '日元',
           symbol: 'JPY',
           rate: 123.0,
