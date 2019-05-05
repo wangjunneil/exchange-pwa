@@ -1,6 +1,6 @@
+import { IonicVueRouter } from '@ionic/vue';
 import Vue from 'vue';
 import Home from './views/Home.vue';
-import { IonicVueRouter } from '@ionic/vue';
 
 Vue.use(IonicVueRouter);
 
@@ -16,10 +16,12 @@ export default new IonicVueRouter({
     {
       path: '/country',
       name: 'country',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/Countrys.vue'),
+      component: () => import('./views/Countrys.vue'),
+    },
+    {
+      path: '/settings',
+      name: 'settings',
+      component: () => import('./views/Settings.vue'),
     },
   ],
 });

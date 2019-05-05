@@ -1,10 +1,5 @@
 <template>
     <div class="ion-page">
-        <ion-header mode="md" translucent="true">
-          <ion-toolbar color="danger">
-            <ion-title>Exchange Rate</ion-title>
-          </ion-toolbar>
-        </ion-header>
         <ion-content color="dark">
             <ListRate/>
 
@@ -27,11 +22,11 @@ export default {
   },
   methods: {
     choose() {
-        this.$router.push({path:'/country'});
+      this.$router.push({ path: '/country' });
     },
     doRefresh() {
-        console.log('refresh');
-    }
+      console.log('refresh');
+    },
   },
 };
 </script>

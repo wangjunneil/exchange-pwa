@@ -9,7 +9,15 @@
           <h2>{{ item.symbol }}</h2>
           <p>{{ item.country }}</p>
         </ion-label>
-        <ion-input placeholder="" clearOnEdit slot="end" value="0.00" type="number" mode="md" @ionFocus="beginInput" @ionBlur="endInput"></ion-input>
+        <ion-input placeholder=""
+          clearOnEdit
+          slot="end"
+          value="0.00"
+          type="number"
+          mode="md"
+          @ionFocus="beginInput"
+          @ionBlur="endInput">
+        </ion-input>
       </ion-item>
 
       <ion-item-options side="end">
@@ -25,7 +33,7 @@
 <script>
 export default {
   name: 'ListRate',
-  data: function () {
+  data() {
     return {
       rateObjects: [
         {
@@ -54,7 +62,6 @@ export default {
   },
   methods: {
     beginInput(event) {
-      console.log(event);
       if (event.target.value === '0.00') {
         event.target.value = '';
       }
