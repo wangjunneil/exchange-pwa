@@ -1,0 +1,66 @@
+[{
+		"logo": "../assets/country/CNY.png",
+		"symbol": "CNY",
+		"name": "人民币"
+	},
+	{
+		"logo": "../assets/country/USD.png",
+		"symbol": "USD",
+		"name": "美元"
+	},
+	{
+		"logo": "../assets/country/CAD.png",
+		"symbol": "CAD",
+		"name": "加拿大元"
+	},
+	{
+		"logo": "../assets/country/CHF.png",
+		"symbol": "CHF",
+		"name": "瑞士法郎"
+	},
+	{
+		"logo": "../assets/country/EUR.png",
+		"symbol": "EUR",
+		"name": "欧元"
+	},
+	{
+		"logo": "../assets/country/GBP.png",
+		"symbol": "GBP",
+		"name": "英镑"
+	},
+	{
+		"logo": "../assets/country/HKD.png",
+		"symbol": "HKD",
+		"name": "港币"
+	},
+	{
+		"logo": "../assets/country/JPY.png",
+		"symbol": "JPY",
+		"name": "日元"
+	},
+	{
+		"logo": "../assets/country/PHP.png",
+		"symbol": "PHP",
+		"name": "菲律宾比索"
+	},
+	{
+		"logo": "../assets/country/RUB.png",
+		"symbol": "RUB",
+		"name": "俄罗斯卢布"
+	},
+	{
+		"logo": "../assets/country/TWD.png",
+		"symbol": "TWD",
+		"name": "新台币"
+	},
+	{
+		"logo": "../assets/country/VND.png",
+		"symbol": "VND",
+		"name": "越南盾"
+	},
+	{
+		"logo": "../assets/country/KRW.png",
+		"symbol": "KRW",
+		"name": "韩元"
+	}
+]

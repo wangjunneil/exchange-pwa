@@ -1,7 +1,7 @@
 <template>
   <ion-list>
-    <ion-item-sliding>
-      <ion-item lines="none" v-for="item in rateObjects" v-bind:key="item.symbol">
+    <ion-item-sliding v-for="item in rateObjects">
+      <ion-item lines="none" min-height="30" v-bind:key="item.symbol">
         <ion-thumbnail slot="start">
           <img :src="item.logo">
         </ion-thumbnail>
@@ -13,8 +13,11 @@
       </ion-item>
 
       <ion-item-options side="end">
-        <ion-item-option>Unread</ion-item-option>
+        <ion-item-option mode="md" translucent="true" color="danger">
+          <ion-icon name="trash" color="light"></ion-icon>
+        </ion-item-option>
       </ion-item-options>
+
     </ion-item-sliding>
   </ion-list>
 </template>
@@ -66,8 +69,19 @@ export default {
 </script>
 
 <style scoped>
-ion-item {
-  padding-top: 10px;
+ion-icon {
+  font-size:30px;
+}
+/* ion-list {
+  padding-bottom: 15px;
+}
+ion-item, ion-item-options {
+  padding-top: 15px;
+} */
+
+ion-item-sliding {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 ion-input {
