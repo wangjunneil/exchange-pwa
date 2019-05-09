@@ -19,15 +19,12 @@
             </ion-item>
             <ion-item>
               <ion-label>Refresh time</ion-label>
-              <ion-input
-                value="1"
-                clearInput
-                type="number"
-                min="1"
-                max="100"
-                @ionBlur="endInput">
-              </ion-input>
-                <ion-label class="units">min</ion-label>
+              <ion-select interface="action-sheet">
+                <ion-select-option value="5">5 min</ion-select-option>
+                <ion-select-option value="10">10 min</ion-select-option>
+                <ion-select-option value="30" selected>30 min</ion-select-option>
+                <ion-select-option value="60">60 min</ion-select-option>
+              </ion-select>
             </ion-item>
             <ion-item class="about">
               <ion-label>

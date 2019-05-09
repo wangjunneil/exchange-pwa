@@ -5,6 +5,3 @@
     </ion-app>
   </div>
 </template>
-
-<style>
-</style>
