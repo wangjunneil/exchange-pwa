@@ -7,7 +7,7 @@
             background-color="#000">
     </loading>
 
-    <ion-header translucent="true">
+    <ion-header>
       <ion-toolbar color="danger">
         <ion-buttons slot="start">
           <ion-back-button text=""></ion-back-button>
@@ -24,7 +24,7 @@
     </ion-header>
     <ion-content>
       <ion-list>
-        <ion-item button="true" :disabled="d.disabled" @click="choose(d)" lines="none" v-for="d in datas" v-bind:key="d.symbol">
+        <ion-item button="true" @click="choose(d)" lines="none" v-for="d in datas" v-bind:key="d.symbol">
           <ion-thumbnail slot="start">
             <img :src="d.logo">
           </ion-thumbnail>
