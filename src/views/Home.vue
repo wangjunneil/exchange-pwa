@@ -4,55 +4,47 @@
             <ListRate/>
 
             <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-              <ion-fab-button @click="choose" color="danger" mode="md" translucent="true">
-                <ion-icon name="add"></ion-icon>
-              </ion-fab-button>
+              <router-link to="country">
+                <ion-fab-button color="danger" mode="md" translucent="true">
+                  <ion-icon name="add"></ion-icon>
+                </ion-fab-button>
+              </router-link>
             </ion-fab>
         </ion-content>
+
+        <ion-footer translucent="true">
+          <ion-label>Last update time: {{ lastUpdateTime }}</ion-label>
+        </ion-footer>
       </div>
 </template>
 
 <script>
 import ListRate from '@/components/ListRate.vue';
+import { cacheRateNow } from '../util/rateutil';
 
 export default {
   name: 'home',
-  created() {
-    this.timerRefresh();
-  },
   data() {
     return {
-      API_KEY: "673abeff572fd24d4eb4b3b6d16955bc",
+      lastUpdateTime: "5/9/2019, 4:52:04 PM",
     };
+  },
+  created() {
+    cacheRateNow();
   },
   components: {
     ListRate,
   },
-  methods: {
-    timerRefresh() {
-      setInterval(()=>{
-        let cacheData = JSON.parse(localStorage.getItem('cacheData'));
-        let currencies = "";
-        cacheData.forEach(e => { currencies += e.symbol + ',' });
-
-        fetch(`http://www.apilayer.net/api/live?access_key=${this.API_KEY}&source=USD&currencies=${currencies}&format=1`)
-        .then(resp => { return resp.json(); })
-        .then(function(myJson) {
-          if (myJson.success) {
-              console.log(new Date(parseInt(myJson.timestamp) * 1000).toLocaleString().replace(/:\d{1,2}$/,' '));
-              localStorage.setItem('storedRates', JSON.stringify(myJson));
-          } else {
-              console.log(myJson.error.info);
-          }
-        });
-      }, 10000); // 30秒
-    },
-    choose() {
-      this.$router.push({ path: '/country' });
-    },
-    doRefresh() {
-      console.log('refresh');
-    },
-  },
 };
 </script>
+
+<style scoped>
+ion-footer {
+  text-align: right;
+  padding: 5px 5px;
+}
+
+ion-label {
+  font-size:12px;
+}
+</style>

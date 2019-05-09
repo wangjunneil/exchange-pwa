@@ -1,66 +1,79 @@
 [{
 		"logo": "/static/CNY.png",
 		"symbol": "CNY",
-		"name": "人民币"
+		"name": "人民币",
+		"disabled": true
 	},
 	{
 		"logo": "/static/USD.png",
 		"symbol": "USD",
-		"name": "美元"
+		"name": "美元",
+		"disabled": true
 	},
 	{
 		"logo": "/static/CAD.png",
 		"symbol": "CAD",
-		"name": "加拿大元"
+		"name": "加拿大元",
+		"disabled": true
 	},
 	{
 		"logo": "/static/CHF.png",
 		"symbol": "CHF",
-		"name": "瑞士法郎"
+		"name": "瑞士法郎",
+		"disabled": true
 	},
 	{
 		"logo": "/static/EUR.png",
 		"symbol": "EUR",
-		"name": "欧元"
+		"name": "欧元",
+		"disabled": true
 	},
 	{
 		"logo": "/static/GBP.png",
 		"symbol": "GBP",
-		"name": "英镑"
+		"name": "英镑",
+		"disabled": true
 	},
 	{
 		"logo": "/static/HKD.png",
 		"symbol": "HKD",
-		"name": "港币"
+		"name": "港币",
+		"disabled": true
 	},
 	{
 		"logo": "/static/JPY.png",
 		"symbol": "JPY",
-		"name": "日元"
+		"name": "日元",
+		"disabled": true
 	},
 	{
 		"logo": "/static/PHP.png",
 		"symbol": "PHP",
-		"name": "菲律宾比索"
+		"name": "菲律宾比索",
+		"disabled": true
 	},
 	{
 		"logo": "/static/RUB.png",
 		"symbol": "RUB",
-		"name": "俄罗斯卢布"
+		"name": "俄罗斯卢布",
+		"disabled": true
 	},
 	{
 		"logo": "/static/TWD.png",
 		"symbol": "TWD",
-		"name": "新台币"
+		"name": "新台币",
+		"disabled": true
 	},
 	{
 		"logo": "/static/VND.png",
 		"symbol": "VND",
-		"name": "越南盾"
+		"name": "越南盾",
+		"disabled": true
 	},
 	{
 		"logo": "/static/KRW.png",
 		"symbol": "KRW",
-		"name": "韩元"
+		"name": "韩元",
+		"disabled": true
 	}
 ]

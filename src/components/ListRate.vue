@@ -1,5 +1,9 @@
 <template>
   <ion-list>
+    <!--<ion-list-header>
+      <ion-label></ion-label>
+    </ion-list-header>-->
+
     <ion-item-sliding v-for="item in rateObjects" v-model="rateObjects" v-bind:key="item.symbol">
       <ion-item lines="none" min-height="30">
         <ion-thumbnail slot="start">
@@ -33,8 +37,6 @@
 </template>
 
 <script>
-const API_KEY = "673abeff572fd24d4eb4b3b6d16955bc";
-
 export default {
   name: 'ListRate',
   created() {
@@ -43,9 +45,6 @@ export default {
   data() {
     return {
       rateObjects: [],
-      rateValues: {
-
-      },
     };
   },
   props: {
@@ -53,7 +52,7 @@ export default {
   },
   methods: {
     beginInput(event) {
-      if (event.target.value === '0.00') {
+      if (event.target.value === '0.00' || event.target.value === '0') {
         event.target.value = '';
       }
     },
@@ -70,24 +69,15 @@ export default {
         return;
       }
       const quotes = storedRates.quotes;
-      const cacheData = JSON.parse(localStorage.getItem('cacheData'));
-      cacheData.forEach((v) => {
-        v.rate = (value / quotes[`USD${v.symbol}`]).toFixed(2);
-        this.rateObjects.splice(this.rateObjects.findIndex(e => e.symbol === v.symbol), 1, v);
-        // this.$set(v, "rate", (value / quotes[`USD${v.symbol}`]).toFixed(2));
-        // this.rateObjects.push(v);
-      });
+      const currency = (value / quotes[`USD${item.symbol}`]).toFixed(2); // 本币换算成美元
 
-      // this.rateObjects.push(resultData);
-// console.log(this.rateObjects);
-      // this.$set(this.rateObjects, resultData);
-      // cacheData.forEach(v => {
-      //   v.rate = (value / quotes[`USD${v.symbol}`]).toFixed(2);
-      //   // this.rateObjects.splice(this.rateObjects.findIndex(e => e.symbol === v.symbol), 1, v);
-      //
-      //   // this.$set(this.rateObjects, this.rateObjects.findIndex(e => e.symbol === v.symbol) , v);
-      //   this.
-      // })
+      const cacheData = JSON.parse(localStorage.getItem('cacheData'));
+      cacheData
+        .filter(e => e.symbol != item.symbol) // 过滤本币
+        .forEach(v => {
+          v.rate = (currency * quotes[`USD${v.symbol}`]).toFixed(2);
+          this.rateObjects.splice(this.rateObjects.findIndex(e => e.symbol === v.symbol), 1, v);
+        });
     },
     removeData(symbol) {
       this.rateObjects = this.rateObjects.filter(e => e.symbol != symbol);
