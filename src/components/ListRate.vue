@@ -68,14 +68,15 @@ export default {
       if (storedRates === null) {
         return;
       }
-      const quotes = storedRates.quotes;
-      const currency = (value / quotes[`USD${item.symbol}`]).toFixed(2); // 本币换算成美元
+
+      const rates = storedRates.rates;
+      const currency = (value / rates[`${item.symbol}`]).toFixed(2); // 本币换算成美元
 
       const cacheData = JSON.parse(localStorage.getItem('cacheData'));
       cacheData
         .filter(e => e.symbol != item.symbol) // 过滤本币
         .forEach(v => {
-          v.rate = (currency * quotes[`USD${v.symbol}`]).toFixed(2);
+          v.rate = (currency * rates[`${v.symbol}`]).toFixed(2);
           this.rateObjects.splice(this.rateObjects.findIndex(e => e.symbol === v.symbol), 1, v);
         });
     },
