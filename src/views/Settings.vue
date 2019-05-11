@@ -1,6 +1,6 @@
 <template>
     <div class="ion-page">
-      <ion-header translucent="true">
+      <ion-header>
         <ion-toolbar color="danger">
           <ion-buttons slot="start">
             <ion-back-button text=""></ion-back-button>
@@ -11,11 +11,11 @@
         <ion-content color="dark">
           <ion-item>
             <ion-label>Allow position</ion-label>
-            <ion-toggle slot="end" color="danger"></ion-toggle>
+            <ion-toggle slot="end" color="danger" @ionChange="enableGeo"></ion-toggle>
           </ion-item>
             <ion-item>
               <ion-label>Allow notification</ion-label>
-              <ion-toggle slot="end" color="danger"></ion-toggle>
+              <ion-toggle slot="end" color="danger" @ionChange="enableMsg"></ion-toggle>
             </ion-item>
             <ion-item>
               <ion-label>Refresh time</ion-label>
@@ -37,14 +37,17 @@
 </template>
 
 <script>
+import { geoLocation, pushMessage } from '../util/nativefun';
+import { requestMessage } from '../util/sw';
+
 export default {
   name: 'Settings',
   methods: {
-    endInput(event) {
-      let val = event.target.value;
-      if (val === '' || val == '0') {
-        event.target.value = '1';
-      }
+    enableGeo() {
+      geoLocation();
+    },
+    enableMsg() {
+      requestMessage();
     },
   },
 };

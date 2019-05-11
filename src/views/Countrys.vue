@@ -39,7 +39,7 @@
 <script>
 import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
-import { cacheRateNow } from '../util/rateutil';
+import { requestRate } from '../util/nativefun';
 
 export default {
   name: 'Countrys',
@@ -79,7 +79,7 @@ export default {
         localStorage.setItem('cacheData', JSON.stringify(cacheData));
 
         // update
-        cacheRateNow();
+        requestRate();
       }
 
       this.$router.back();

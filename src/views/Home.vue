@@ -20,7 +20,7 @@
 
 <script>
 import ListRate from '@/components/ListRate.vue';
-import { cacheRateNow } from '../util/rateutil';
+import { requestRate } from '../util/nativefun';
 
 export default {
   name: 'home',
@@ -30,7 +30,7 @@ export default {
     };
   },
   created() {
-    cacheRateNow();
+    requestRate();
   },
   components: {
     ListRate,
