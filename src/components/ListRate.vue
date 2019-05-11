@@ -1,9 +1,5 @@
 <template>
   <ion-list>
-    <!--<ion-list-header>
-      <ion-label></ion-label>
-    </ion-list-header>-->
-
     <ion-item-sliding v-for="item in rateObjects" v-model="rateObjects" v-bind:key="item.symbol">
       <ion-item lines="none" min-height="30">
         <ion-thumbnail slot="start">

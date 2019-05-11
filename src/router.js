@@ -23,5 +23,10 @@ export default new IonicVueRouter({
       name: 'settings',
       component: () => import('./views/Settings.vue'),
     },
+    {
+      path: '/offline',
+      name: 'offline',
+      component: () => import('./views/Offline.vue'),
+    },
   ],
 });

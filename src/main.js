@@ -1,3 +1,4 @@
+import { registerSw } from './util/sw';
 import Ionic from '@ionic/vue';
 import '@ionic/core/css/ionic.bundle.css';
 
@@ -5,6 +6,7 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 
+Vue.use(registerSw);
 Vue.use(Ionic);
 Vue.config.productionTip = false;
 
