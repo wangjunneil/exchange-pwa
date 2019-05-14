@@ -8,11 +8,11 @@
     </loading>
 
     <ion-header>
-      <ion-toolbar color="danger">
+      <ion-toolbar color="dark">
         <ion-buttons slot="start">
           <ion-back-button text=""></ion-back-button>
         </ion-buttons>
-        <ion-title>Country List</ion-title>
+        <ion-title>COUNTRYS</ion-title>
         <ion-buttons slot="primary">
           <router-link to="settings">
             <ion-button>

@@ -1,6 +1,12 @@
 <template>
     <div class="ion-page">
-        <ion-content color="dark">
+      <ion-header>
+        <ion-toolbar color="dark">
+          <ion-title>Rates</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+        <ion-content color="light">
             <ListRate/>
 
             <ion-fab vertical="bottom" horizontal="end" slot="fixed">
@@ -11,10 +17,6 @@
               </router-link>
             </ion-fab>
         </ion-content>
-
-        <ion-footer translucent="true">
-          <ion-label>Last update time: {{ lastUpdateTime }}</ion-label>
-        </ion-footer>
       </div>
 </template>
 
@@ -24,26 +26,26 @@ import { requestRate } from '../util/nativefun';
 
 export default {
   name: 'home',
-  data() {
-    return {
-      lastUpdateTime: "5/9/2019, 4:52:04 PM",
-    };
-  },
   created() {
+    this.resetData();
     requestRate();
   },
   components: {
     ListRate,
   },
+  methods: {
+    resetData() {
+      let cacheData = JSON.parse(localStorage.getItem('cacheData'));
+      if (cacheData != null) {
+        let updateCacheData = cacheData.filter(e => e.rate == "0.00" );
+        localStorage.setItem('cacheData', JSON.stringify(updateCacheData));
+      }
+    }
+  }
 };
 </script>
 
 <style scoped>
-ion-footer {
-  text-align: right;
-  padding: 5px 5px;
-}
-
 ion-label {
   font-size:12px;
 }
