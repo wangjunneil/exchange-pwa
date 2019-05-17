@@ -1,7 +1,7 @@
 <template>
     <div class="ion-page">
       <ion-header>
-        <ion-toolbar color="dark">
+        <ion-toolbar color="light">
           <ion-buttons slot="start">
             <ion-back-button text=""></ion-back-button>
           </ion-buttons>
@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import { requestGeoLocation } from '../util/nativefun';
+import { geoLocation } from '../util/nativefun';
 
 export default {
   name: 'Settings',

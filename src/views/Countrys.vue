@@ -24,7 +24,8 @@
     </ion-header>
     <ion-content>
       <ion-list>
-        <ion-item button="true" @click="choose(d)" lines="none" v-for="d in datas" v-bind:key="d.symbol">
+        <ion-item button="true" @click="choose(d)" lines="none" v-for="d in datas"
+          v-bind:key="d.symbol">
           <ion-thumbnail slot="start">
             <img :src="d.logo">
           </ion-thumbnail>
@@ -56,7 +57,6 @@ export default {
   methods: {
     requestData() {
       this.isLoading = true;
-      const cacheData = JSON.parse(localStorage.getItem('cacheData'));
 
       async function fetchData() {
         const data = await fetch('https://raw.githubusercontent.com/wangjunneil/exchange-pwa/master/country.json')
@@ -70,10 +70,10 @@ export default {
       });
     },
     choose(data) {
-      data.rate = "0.00";
+      data.rate = '0.00';
 
-      let cacheData = JSON.parse(localStorage.getItem('cacheData'));
-      const existElement = cacheData.filter(e => e.symbol == data.symbol);
+      const cacheData = JSON.parse(localStorage.getItem('cacheData'));
+      const existElement = cacheData.filter(e => e.symbol === data.symbol);
       if (existElement.length === 0) {
         cacheData.push(data);
         localStorage.setItem('cacheData', JSON.stringify(cacheData));

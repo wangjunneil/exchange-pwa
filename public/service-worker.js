@@ -33,7 +33,7 @@ function onFetch(e) {
             var fetchRequest = e.request.clone();
             return fetch(fetchRequest).then(response => {
                 // 检查是否收到无效的响应
-                if (!response || response.status !== 200 || response.type !== 'basic') {
+                if (!response || response.status != 200) {
                     return response || caches.match("/offline");
                 }
 

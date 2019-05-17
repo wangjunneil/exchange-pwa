@@ -35,13 +35,13 @@ export default {
   },
   methods: {
     resetData() {
-      let cacheData = JSON.parse(localStorage.getItem('cacheData'));
+      const cacheData = JSON.parse(localStorage.getItem('cacheData'));
       if (cacheData != null) {
-        let updateCacheData = cacheData.filter(e => e.rate == "0.00" );
+        const updateCacheData = cacheData.filter(e => e.rate === '0.00');
         localStorage.setItem('cacheData', JSON.stringify(updateCacheData));
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
