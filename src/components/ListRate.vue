@@ -60,7 +60,7 @@ export default {
     executeInput(event, item) {
       const value = event.target.value;
 
-      let storedRates = JSON.parse(localStorage.getItem('storedRates'));
+      const storedRates = JSON.parse(localStorage.getItem('storedRates'));
       if (storedRates === null) {
         return;
       }
@@ -87,7 +87,7 @@ export default {
         this.rateObjects = cacheData;
       } else {
         this.rateObjects = [
-          { logo: '/static/CNY.png',name: '人民币',symbol: 'CNY',rate: "0.00"},
+          { logo:'/static/CNY.png', name:'人民币', symbol:'CNY', rate:'0.00' },
         ];
         localStorage.setItem('cacheData', JSON.stringify(this.rateObjects));
       }
