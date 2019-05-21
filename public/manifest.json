@@ -4,8 +4,8 @@
   "start_url": ".",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff",
+  "background_color": "#222428",
+  "theme_color": "#222428",
   "description": "Online exchange rate calculation application",
 	"icons": [{
 		"src": "/static/icon/android-chrome-192x192.png",
@@ -15,8 +15,5 @@
 		"src": "/static/icon/android-chrome-512x512.png",
 		"sizes": "512x512",
 		"type": "image/png"
-	}],
-	"theme_color": "#ffffff",
-	"background_color": "#ffffff",
-	"display": "standalone"
+	}]
 }

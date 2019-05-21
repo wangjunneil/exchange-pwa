@@ -27,8 +27,7 @@
           <ion-icon name="trash" color="light"></ion-icon>
         </ion-item-option>
       </ion-item-options>
-
-    </ion-item-sliding>
+    </ion-item-sliding>    
   </ion-list>
 </template>
 

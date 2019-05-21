@@ -1,7 +1,7 @@
 <template>
     <div class="ion-page">
       <ion-header>
-        <ion-toolbar color="light">
+        <ion-toolbar color="dark">
           <ion-buttons slot="start">
             <ion-back-button text=""></ion-back-button>
           </ion-buttons>
@@ -32,6 +32,10 @@
               </ion-label>
               <ion-icon name="logo-octocat" slot="end"></ion-icon>
               </ion-item>
+
+              <ion-item class="clear" @click="clear">
+                <ion-label>Clear Cache</ion-label>
+              </ion-item>
         </ion-content>
       </div>
 </template>
@@ -45,6 +49,9 @@ export default {
     requestGeo() {
       geoLocation();
     },
+    clear() {
+      caches.keys().then(k => { caches.delete(k); });
+    }
   },
 };
 </script>
@@ -57,6 +64,12 @@ ion-label {
 .about {
   margin-top: 5px;
   margin-bottom: 5px;
+}
+.clear {
+  /* margin-top: 5px; */
+  /* margin-bottom: 5px; */
+  text-align: center;
+  color:cornflowerblue;
 }
 ion-input {
   text-align: right;

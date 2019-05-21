@@ -1,7 +1,7 @@
 <template>
   <div class="ion-page">
     <ion-header>
-      <ion-toolbar color="danger">
+      <ion-toolbar color="dark">
         <ion-title>Device Offline</ion-title>
         <ion-buttons slot="start">
           <router-link to="/">

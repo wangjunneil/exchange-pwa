@@ -61,4 +61,4 @@ function urlB64ToUint8Array(base64String) {
     return outputArray;
 }
 
-export { registerSw, requestMessage }
+export { registerSw, requestMessage };
