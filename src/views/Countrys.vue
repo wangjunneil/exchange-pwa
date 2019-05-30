@@ -16,7 +16,7 @@
         <ion-buttons slot="primary">
           <router-link to="settings">
             <ion-button>
-              <ion-icon color="light" slot="end" name="more"></ion-icon>
+              <ion-icon color="light" slot="end" name="settings"></ion-icon>
             </ion-button>
           </router-link>
         </ion-buttons>

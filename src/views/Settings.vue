@@ -57,10 +57,10 @@ export default {
 </script>
 
 <style scoped>
-ion-label {
+/* ion-label {
   padding-top: 15px;
   padding-bottom: 15px;
-}
+} */
 .about {
   margin-top: 5px;
   margin-bottom: 5px;
