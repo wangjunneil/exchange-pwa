@@ -1,13 +1,38 @@
 var registerObj = null;
+let newWorker;
 
 function registerSw() {
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', e => {
             // 注册"serviceWorker"
-            navigator.serviceWorker.register('/service-worker.js')
-            .then(registration => {
+            navigator.serviceWorker.register('/service-worker.js').then(registration => {
                 registerObj = registration;
                 console.log('Service Worker registration success with scope: ', registration.scope);
+
+                // https://github.com/deanhume/pwa-update-available/blob/master/index.html
+                // https://colmenerodigital.com/blog/implementing-pwa-update-notification/
+                // https://deanhume.com/displaying-a-new-version-available-progressive-web-app/
+                // https://medium.com/progressive-web-apps/pwa-create-a-new-update-available-notification-using-service-workers-18be9168d717
+                registration.addEventListener('updatefound', () => {
+                    // A wild service worker has appeared in reg.installing!
+                    newWorker = registration.installing;
+
+                    newWorker.addEventListener('statechange', () => {
+                        // Has network.state changed?
+                        switch (newWorker.state) {
+                          case 'installed':
+                            if (navigator.serviceWorker.controller) {
+                                console.log('New content is available; please refresh.');
+
+                              // new update available
+                              let snackbar = document.getElementById('snackbar');
+                              snackbar.className = 'show';
+                            }
+                            // No update available
+                            break;
+                        }
+                    });
+                });
             })
             .catch(err => {
                 console.log('Service Worker registration failed: ', err);
